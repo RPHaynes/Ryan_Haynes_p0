@@ -13,7 +13,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mv target/Ryan_Haynes_p1-1.war ./
+      - mv target/Ryan_Haynes_p1-1.war ./ROOT.war
 artifacts:
   files:
     - Ryan_Haynes_p1-1.war
