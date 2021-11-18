@@ -5,6 +5,8 @@ phases:
       java: corretto8
   pre_build:
     commands:
+      - cp ./settings.xml /root/.m2/settings.xml
+      - echo ${env.GitHub}
       - echo Nothing to do in the pre_build phase...
   build:
     commands:
