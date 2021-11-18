@@ -15,6 +15,11 @@ public class JSONServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		try{
+			Worm.getInstance();
+			Worm.closeInstance();
+			resp.getWriter().println("Out");
+		} catch (Exception e) {e.printStackTrace(resp.getWriter());}
 
 	}
 
