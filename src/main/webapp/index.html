@@ -1,10 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>M</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <p>test</p>
+
+<div class="container-fluid">
+    <h1>Contact Book</h1>
+    <p>Ever wanted to have details of every person you know in one place? Well here is your chance with the new and completely innovated Contact Book!!!</p>
+
+    <H4><b>Operations</b></H4>
+    <ul>Get:&emsp;gets entries based on parameters</ul>
+    <ul>Post:&emsp;adds entry based on JSON body</ul>
+    <ul>Put:&emsp;updates entries based on parameters and JSON BODY</ul>
+    <ul>Del:&emsp;deletes entries based on parameters</ul>
+    <H4><b>Operation Parameters</b></H4>
+    <p>These Parameters can be used with operations (except for post) to specify what to search for</p>
+    <table>
+        <tr>
+            <th>Parameters &emsp;</th>
+            <th>Type&emsp;</th>
+            <th>Example&emsp;</th>
+        </tr>
+        <tr>
+            <td>first_name&emsp;</td>
+            <td>String&emsp;</td>
+            <td>Ryan&emsp;</td>
+        </tr>
+        <tr>
+            <td>last_name&emsp;</td>
+            <td>String&emsp;</td>
+            <td>Haynes&emsp;</td>
+        </tr>
+        <tr>
+            <td>streetName&emsp;</td>
+            <td>String&emsp;</td>
+            <td>123 Normal BLV&emsp;</td>
+        </tr>
+        <tr>
+            <td>cityName&emsp;</td>
+            <td>String&emsp;</td>
+            <td>Indianapolis&emsp;</td>
+        </tr>
+        <tr>
+            <td>stateName&emsp;</td>
+            <td>String&emsp;</td>
+            <td>Indiana&emsp;</td>
+        </tr>
+        <tr>
+            <td>zipCode&emsp;</td>
+            <td>int&emsp;</td>
+            <td>47800&emsp;</td>
+        </tr>
+        <tr>
+            <td>phoneNumber&emsp;</td>
+            <td>String&emsp;</td>
+            <td>(812)251-0000&emsp;</td>
+        </tr>
+        <tr>
+            <td>birthDay&emsp;</td>
+            <td>Local Date&emsp;</td>
+            <td>1998-09-10&emsp;</td>
+        </tr>
+    </table>
+    <h3>JSON Entry Structure</h3>
+    <CODE>
+        {
+        "firstName": "Ryan",
+        "lastName": "A",
+        "streetName": "Street3",
+        "cityName": "City1",
+        "stateName": "NM",
+        "zipCode": 540000,
+        "phoneNumber": "1 (812) 251 0000",
+        "birthDay": [
+        1998,
+        9,
+        1
+        ]
+        }
+    </CODE>
+    <h3>Get example</h3>
+    <code>
+        curl --location --request GET 'localhost:8080/api?birthDay=1998-09-10'
+    </code>
+    <h3>Post example</h3>
+    <code>
+        curl --location --request POST 'localhost:8080/api' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+        "firstName": "Ryan",
+        "lastName": "H",
+        "streetName": "Street3",
+        "cityName": "City1",
+        "stateName": "Indiana",
+        "zipCode": 540000,
+        "phoneNumber": "1 (812) 251 0000",
+        "birthDay": [
+        1998,
+        9,
+        10
+        ]
+        }'
+    </code>
+    <h3>Put example</h3>
+    <code>
+        curl --location --request PUT 'localhost:8080/api?lastName=A' \
+        --header 'Content-Type: application/json' \
+        --data-raw '{
+        "firstName": "Ryan",
+        "lastName": "A",
+        "streetName": "Street3",
+        "cityName": "City1",
+        "stateName": "NM",
+        "zipCode": 540000,
+        "phoneNumber": "1 (812) 251 0000",
+        "birthDay": [
+        1998,
+        9,
+        1
+        ]
+        }'v
+    </code>
+    <h3>Del example</h3>
+    <code>
+        curl --location --request DELETE 'localhost:8080/api?firstName=Ryan'
+    </code>
+</div>
+
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="TomCat" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
     <option name="adminPort" value="8005" />
-    <option name="contextPath" value="/Ryan_Haynes_p1" />
+    <option name="contextPath" value="/" />
     <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
     <option name="envOptions">
       <map />
